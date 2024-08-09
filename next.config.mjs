@@ -3,14 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,     
 
-  // Configuración de optimización de imágenes
+ 
   images: {
     domains: ['example.com'],
     deviceSizes: [320, 420, 768, 1024, 1200], 
     imageSizes: [16, 32, 48, 64, 96],         
   },
 
-  // Configuración de encabezados para CORS y CSP
+
   async headers() {
     return [
       {
