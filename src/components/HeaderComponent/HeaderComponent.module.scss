@@ -1,0 +1,17 @@
+.header {
+    @apply bg-pxo-dark-blue text-white; // Aplica el color de fondo y texto
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .button {
+    @apply bg-pxo-blue hover:bg-pxo-teal; // Aplica los colores al botón
+  }
+  
