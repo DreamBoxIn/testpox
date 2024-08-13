@@ -1,59 +1,37 @@
 .walletCard {
-    @apply bg-white p-4 rounded-lg shadow-lg w-full max-w-md;
-  
-    @media (max-width: 640px) {
-      padding: 4;
-      max-width: 100%;
-    }
+  @apply bg-white p-0 rounded-lg shadow-lg w-full max-w-md;
+
+  @media (max-width: 640px) {
+    padding: 4;
+    max-width: 100%;
   }
+}
+
+.buttonGroup {
+  @apply flex justify-around items-center mt-6; /* Distribuye uniformemente los botones */
+}
+
+.walletButtonContainer {
+  @apply flex flex-col items-center cursor-pointer; /* Asegura que el cursor sea de tipo pointer para todo el contenedor */
   
-  .balanceSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    padding: 10px 15px;
-    background-color: var(--tw-bg-opacity, rgba(36, 42, 90, 0.1)); // Fondo más sutil con color corporativo
-    border-radius: 8px;
+  &:hover .walletButton {
+    @apply bg-pxo-light-teal; /* Cambio de color del botón al hacer hover en todo el contenedor */
   }
-  
-  .balanceText {
-    @apply text-pxo-dark-blue font-semibold;
+
+  &:hover .buttonLabel {
+    @apply text-pxo-dark-blue; /* Opcional: Cambia el color del texto al hacer hover */
   }
+}
+
+.walletButton {
+  @apply flex items-center justify-center w-12 h-12 bg-pxo-teal text-white rounded-full; /* Círculo más pequeño */
   
-  .balanceAmount {
-    @apply text-xl font-bold text-pxo-blue;
-    margin-right: 10px;
+  .anticon {
+    font-size: 36px; /* Ajuste del tamaño del ícono */
+    line-height: 1; /* Asegura que el ícono esté centrado verticalmente */
   }
-  
-  .currencySelect {
-    width: 100px;
-    border-radius: 8px;
-    background-color: var(--tw-bg-opacity, rgba(36, 42, 90, 0.1)); // Fondo más sutil con color corporativo
-  }
-  
-  .buttonGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    
-    @media (min-width: 640px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
-  
-  .walletButton {
-    @apply bg-pxo-teal text-white py-2 px-4 rounded-lg w-full;
-    
-    @media (min-width: 640px) {
-      width: auto;
-      flex: 1 1 45%; // Flexbox para que se ajusten dos botones por fila en pantallas más grandes
-    }
-  
-    &:hover {
-      @apply bg-pxo-light-teal; // Cambio de color al pasar el mouse
-    }
-  }
-  
+}
+
+.buttonLabel {
+  @apply mt-2 text-sm text-center font-semibold; /* Texto en negrita */
+}

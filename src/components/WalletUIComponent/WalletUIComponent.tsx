@@ -1,48 +1,60 @@
 "use client"; // Asegúrate de que esta línea esté al principio
 
-import React, { useState } from 'react';
-import { Card, Button, Select, Typography } from 'antd';
+import React from 'react';
+import { Card, Button } from 'antd';
 import { ShoppingOutlined, DownloadOutlined, UploadOutlined, DollarOutlined } from '@ant-design/icons';
+import BalanceComponent from '@/components/BalanceComponent/BalanceComponent';
 import styles from './WalletUIComponent.module.scss';
 
-const { Option } = Select;
-const { Text } = Typography;
-
 const WalletUIComponent: React.FC = () => {
-  const [currency, setCurrency] = useState('PXO');
-
-  const handleCurrencyChange = (value: string) => {
-    setCurrency(value);
+  const handleButtonClick = (action: string) => {
+    console.log(`${action} clicked`);
+    // Aquí puedes manejar la lógica de cada botón
   };
 
   return (
     <Card className={styles.walletCard}>
-      <div className={styles.balanceSection}>
-        <Text className={styles.balanceText}>Saldo disponible:</Text>
-        <Text className={styles.balanceAmount}>10,000</Text>
-        <Select
-          value={currency}
-          onChange={handleCurrencyChange}
-          className={styles.currencySelect}
-        >
-          <Option value="PXO">PXO</Option>
-          <Option value="USD">USD</Option>
-          <Option value="USDT">USDT</Option>
-        </Select>
-      </div>
+      <BalanceComponent />
       <div className={styles.buttonGroup}>
-        <Button type="primary" className={styles.walletButton} icon={<ShoppingOutlined />}>
-          Comprar
-        </Button>
-        <Button type="primary" className={styles.walletButton} icon={<UploadOutlined />}>
-          Enviar
-        </Button>
-        <Button type="primary" className={styles.walletButton} icon={<DownloadOutlined />}>
-          Recibir
-        </Button>
-        <Button type="primary" className={styles.walletButton} icon={<DollarOutlined />}>
-          Vender
-        </Button>
+        <div
+          className={styles.walletButtonContainer}
+          onClick={() => handleButtonClick('Comprar')}
+        >
+          <Button type="primary" className={styles.walletButton}>
+            <ShoppingOutlined />
+          </Button>
+          <span className={styles.buttonLabel}>Comprar</span>
+        </div>
+
+        <div
+          className={styles.walletButtonContainer}
+          onClick={() => handleButtonClick('Enviar')}
+        >
+          <Button type="primary" className={styles.walletButton}>
+            <UploadOutlined />
+          </Button>
+          <span className={styles.buttonLabel}>Enviar</span>
+        </div>
+
+        <div
+          className={styles.walletButtonContainer}
+          onClick={() => handleButtonClick('Recibir')}
+        >
+          <Button type="primary" className={styles.walletButton}>
+            <DownloadOutlined />
+          </Button>
+          <span className={styles.buttonLabel}>Recibir</span>
+        </div>
+
+        <div
+          className={styles.walletButtonContainer}
+          onClick={() => handleButtonClick('Vender')}
+        >
+          <Button type="primary" className={styles.walletButton}>
+            <DollarOutlined />
+          </Button>
+          <span className={styles.buttonLabel}>Vender</span>
+        </div>
       </div>
     </Card>
   );
