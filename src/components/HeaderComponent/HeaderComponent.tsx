@@ -1,16 +1,36 @@
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import React from 'react';
 import { Button } from 'antd';
-import ButtonLoginComponent from '@/components/ButtonLoginComponent';
 import styles from './HeaderComponent.module.scss';
 
 const HeaderComponent: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.logo}>
-      <Image src="/logo.png" alt="MyLogo" width={50} height={50} />
+        <Image src="/logo.svg" alt="MyLogo" width={100} height={100} />
       </div>
-      <ButtonLoginComponent />
+      <Button type="primary" className={styles.loginButton}>
+        Login
+      </Button>
     </header>
   );
 };
