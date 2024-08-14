@@ -1,0 +1,31 @@
+.header {
+    @apply bg-pxo-dark-blue text-white; // Aplica el color de fondo y texto definidos
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  
+    &.scrolled {
+      background-color: rgba(0, 0, 0, 0.8); // Mantén el fondo oscuro al hacer scroll
+    }
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .loginButton {
+    @apply bg-pxo-teal text-white; // Usa el color teal definido
+  
+    &:hover {
+      @apply bg-pxo-light-teal; // Usa el color teal claro definido para hover
+    }
+  }
+  

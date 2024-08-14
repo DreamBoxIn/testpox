@@ -1,0 +1,18 @@
+.tabsMenu {
+    margin-top: 1rem; /* Agrega espacio superior */
+    
+    .ant-tabs-nav {
+      display: flex;
+      justify-content: center; /* Centra las pestañas */
+    }
+  
+    .ant-tabs-tab {
+      margin: 0 1rem; /* Espacio entre las pestañas */
+      font-weight: bold;
+    }
+  
+    .ant-tabs-ink-bar {
+      background-color: #2f48c1; /* Color del indicador de la pestaña activa */
+    }
+  }
+  

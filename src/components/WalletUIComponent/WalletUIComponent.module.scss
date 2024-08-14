@@ -1,0 +1,38 @@
+//WalletUIComponent.module.scss//
+.walletCard {
+  @apply bg-white p-0 rounded-lg shadow-lg w-full max-w-md;
+
+  @media (max-width: 640px) {
+    padding: 4;
+    max-width: 100%;
+  }
+}
+
+.buttonGroup {
+  @apply flex justify-around items-center mt-6; /* Distribuye uniformemente los botones */
+}
+
+.walletButtonContainer {
+  @apply flex flex-col items-center cursor-pointer; /* Asegura que el cursor sea de tipo pointer para todo el contenedor */
+  
+  &:hover .walletButton {
+    @apply bg-pxo-light-teal; /* Cambio de color del botón al hacer hover en todo el contenedor */
+  }
+
+  &:hover .buttonLabel {
+    @apply text-pxo-dark-blue; /* Opcional: Cambia el color del texto al hacer hover */
+  }
+}
+
+.walletButton {
+  @apply flex items-center justify-center w-12 h-12 bg-pxo-teal text-white rounded-full; /* Círculo más pequeño */
+  
+  .anticon {
+    font-size: 36px; /* Ajuste del tamaño del ícono */
+    line-height: 1; /* Asegura que el ícono esté centrado verticalmente */
+  }
+}
+
+.buttonLabel {
+  @apply mt-2 text-sm text-center font-semibold; /* Texto en negrita */
+}
