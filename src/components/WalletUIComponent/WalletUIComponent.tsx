@@ -4,6 +4,7 @@ import React from 'react';
 import { Card, Button } from 'antd';
 import { ShoppingOutlined, DownloadOutlined, UploadOutlined, DollarOutlined } from '@ant-design/icons';
 import BalanceComponent from '@/components/BalanceComponent/BalanceComponent';
+import TabsMenuComponent from '@/components/TabsMenuComponent/TabsMenuComponent';
 import styles from './WalletUIComponent.module.scss';
 
 const WalletUIComponent: React.FC = () => {
@@ -56,6 +57,9 @@ const WalletUIComponent: React.FC = () => {
           <span className={styles.buttonLabel}>Vender</span>
         </div>
       </div>
+      
+      {/* Agregar el componente de Tabs */}
+      <TabsMenuComponent />
     </Card>
   );
 };
