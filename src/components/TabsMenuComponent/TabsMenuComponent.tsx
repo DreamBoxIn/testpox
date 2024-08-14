@@ -8,8 +8,8 @@ const { TabPane } = Tabs;
 
 const TabsMenuComponent: React.FC = () => {
   const walletData = [
-    { title: 'Token 1', description: '1000 PXO', icon: '/icons/token1.png' },
-    { title: 'Token 2', description: '500 USDC', icon: '/icons/token2.png' },
+    { title: 'PXO Token', description: '7,000 PXO', image: '/pxo.png' },
+    { title: 'PXO Token', description: '3,000 PXO', image: '/pxo.png' },
   ];
 
   const historyData = [
@@ -26,7 +26,7 @@ const TabsMenuComponent: React.FC = () => {
           renderItem={item => (
             <List.Item>
               <List.Item.Meta
-                avatar={<Avatar src={item.icon} />}
+                avatar={<Avatar src={item.image} />}
                 title={item.title}
                 description={item.description}
               />
